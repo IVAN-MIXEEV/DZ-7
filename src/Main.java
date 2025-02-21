@@ -22,14 +22,11 @@ public class Main {
         }
 //№3
         int totalPeople = 12_000_000;
-        int fertility = 8;
         int mortality = 17;
-        int increasePerYear = 0;
-        int populationDecline = 0;
-        for (int year = 1; year <= 10; year++) {
-            increasePerYear = totalPeople / 1000 * mortality;
-            populationDecline = totalPeople / 1000 * fertility;
-            totalPeople = totalPeople + increasePerYear - populationDecline;
+        int fertility = 8;
+        int yearNow = 2025;
+        for (int year = yearNow; year < yearNow + 10; year++) {
+            totalPeople += totalPeople * mortality / 1000 - totalPeople * fertility / 1000;
             System.out.println();
             System.out.println("Год " + year + ", численность населения составляет " + totalPeople);
         }
